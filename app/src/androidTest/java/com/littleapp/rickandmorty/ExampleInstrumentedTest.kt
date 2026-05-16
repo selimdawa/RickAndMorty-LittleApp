@@ -1,4 +1,4 @@
-package com.example.rickandmorty_littleapp
+package com.littleapp.rickandmorty
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
