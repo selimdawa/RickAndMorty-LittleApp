@@ -4,4 +4,10 @@
     //Theme
     <string name="basic_theme">Basic Theme</string>
     <string name="sec_theme">Sec Theme</string>
+
+    <string name="character">Character</string>
+    <string name="location">Location</string>
+    <string name="episode">Episode</string>
+    <string name="last_know_location">Last know location :</string>
+    <string name="gender">Gender :</string>
 </resources>

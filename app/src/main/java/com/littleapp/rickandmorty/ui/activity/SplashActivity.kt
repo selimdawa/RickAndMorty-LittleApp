@@ -1,14 +1,14 @@
-package com.littleapp.rickandmorty.Activity
+package com.littleapp.rickandmorty.ui.activity
 
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.littleapp.rickandmorty.Unit.CLASS
 import com.littleapp.rickandmorty.Unit.THEME
 import com.littleapp.rickandmorty.Unit.VOID
 import com.littleapp.rickandmorty.databinding.ActivitySplashBinding
-import com.littleapp.rickandmorty.CLASS
 
 class SplashActivity : AppCompatActivity() {
 

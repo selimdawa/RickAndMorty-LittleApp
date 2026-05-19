@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safeargs.kotlin)
+    alias(libs.plugins.daggerHiltAndroid)
+    alias(libs.plugins.ksp.processor)
+    //id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +45,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 }
 
@@ -57,6 +62,33 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.cardview)
-    //Needed
-
+    //Image
+    implementation(libs.circleimageview)                //Circle image
+    implementation(libs.glide)            //Glide image
+    ksp(libs.compiler)                   //Glide compiler
+    implementation(libs.glide.transformations)           //Glide Blur
+    //NavComponents
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    //OkHttp
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    //Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    //Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    //LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    //Other's
+    implementation(libs.timber) //Timber Log
+    implementation(libs.coil)    //Coil
+    implementation(libs.viewbindingpropertydelegate.noreflection)
+    // 🌟 THE FIX: Forces kapt to understand Kotlin 2.3 metadata structures
+    //ksp("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.9.0")
 }
