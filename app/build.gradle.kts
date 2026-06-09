@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.navigation.safeargs.kotlin)
     alias(libs.plugins.daggerHiltAndroid)
     alias(libs.plugins.ksp.processor)
-    //id("kotlin-kapt")
 }
 
 android {
@@ -63,8 +62,9 @@ dependencies {
     //Image
     implementation(libs.circleimageview)                //Circle image
     implementation(libs.glide)            //Glide image
-    ksp(libs.compiler)                   //Glide compiler
+    ksp(libs.glide.ksp)                   //Glide compiler
     implementation(libs.glide.transformations)           //Glide Blur
+    implementation(libs.coil)    //Coil
     //NavComponents
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
@@ -85,8 +85,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     //Other's
     implementation(libs.timber) //Timber Log
-    implementation(libs.coil)    //Coil
     implementation(libs.viewbindingpropertydelegate.noreflection)
-    // 🌟 THE FIX: Forces kapt to understand Kotlin 2.3 metadata structures
-    //ksp("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.9.0")
+    ksp(libs.kotlin.metadata.jvm)
 }
