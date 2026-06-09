@@ -1,4 +1,4 @@
-package com.littleapp.rickandmorty.base.adapters
+package com.littleapp.rickandmorty.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

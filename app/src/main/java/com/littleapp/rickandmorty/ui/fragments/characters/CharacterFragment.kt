@@ -9,7 +9,7 @@ import com.littleapp.rickandmorty.R
 import com.littleapp.rickandmorty.databinding.FragmentCharacterBinding
 import com.littleapp.rickandmorty.base.BaseFragment
 import com.littleapp.rickandmorty.common.Resource
-import com.littleapp.rickandmorty.base.adapters.CharacterAdapter
+import com.littleapp.rickandmorty.ui.adapters.CharacterAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber

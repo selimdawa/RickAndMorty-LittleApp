@@ -9,6 +9,7 @@ import com.littleapp.rickandmorty.R
 import jp.wasabeef.glide.transformations.BlurTransformation
 
 object VOID {
+
     fun Intent1(context: Context, c: Class<*>?) {
         val intent = Intent(context, c)
         context.startActivity(intent)

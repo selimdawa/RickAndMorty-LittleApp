@@ -6,10 +6,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.littleapp.rickandmorty.R
-import com.littleapp.rickandmorty.base.BaseFragment
-import com.littleapp.rickandmorty.base.adapters.EpisodeAdapter
-import com.littleapp.rickandmorty.common.Resource
 import com.littleapp.rickandmorty.databinding.FragmentEpisodeBinding
+import com.littleapp.rickandmorty.base.BaseFragment
+import com.littleapp.rickandmorty.common.Resource
+import com.littleapp.rickandmorty.ui.adapters.EpisodeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber

@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity() {
     var context = this@MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        THEME.setThemeOfApp(context)
+        //THEME.setThemeOfApp(context)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-/*
+
         binding.toolbar.nameSpace.text = DATA.RICK_AND_MORTY
 
         val fragmentManager: FragmentManager = supportFragmentManager
@@ -33,6 +33,5 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         binding.bottomNavigation
             .setupWithNavController(navController)
-  */
     }
 }
