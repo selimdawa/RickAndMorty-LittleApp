@@ -35,7 +35,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
-        dataBinding = true
         viewBinding = true
     }
 }
@@ -72,9 +71,7 @@ dependencies {
     //Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    //LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
     //Other's
     implementation(libs.timber) //Timber Log
-    implementation(libs.viewbindingpropertydelegate.noreflection)
 }
