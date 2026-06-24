@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigation.safeargs.kotlin)
     alias(libs.plugins.daggerHiltAndroid)
     alias(libs.plugins.ksp.processor)
@@ -35,11 +34,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-        }
-    }
     buildFeatures {
         dataBinding = true
         viewBinding = true
@@ -57,12 +51,9 @@ dependencies {
     //Layout
     implementation(libs.androidx.constraintlayout)
     implementation(libs.material)
-    implementation(libs.androidx.legacy.support.v4)
-    implementation(libs.androidx.cardview)
     //Image
     implementation(libs.circleimageview)                //Circle image
     implementation(libs.glide)            //Glide image
-    ksp(libs.glide.ksp)                   //Glide compiler
     implementation(libs.glide.transformations)           //Glide Blur
     implementation(libs.coil)    //Coil
     //NavComponents
@@ -86,5 +77,4 @@ dependencies {
     //Other's
     implementation(libs.timber) //Timber Log
     implementation(libs.viewbindingpropertydelegate.noreflection)
-    ksp(libs.kotlin.metadata.jvm)
 }
