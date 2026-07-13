@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.ksp)
+    alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.navigation.safeargs.kotlin)
-    alias(libs.plugins.daggerHiltAndroid)
-    alias(libs.plugins.ksp.processor)
 }
 
 android {
@@ -55,9 +55,22 @@ dependencies {
     implementation(libs.glide)            //Glide image
     implementation(libs.glide.transformations)           //Glide Blur
     implementation(libs.coil)    //Coil
-    //NavComponents
-    implementation(libs.androidx.navigation.fragment)
-    implementation(libs.androidx.navigation.ui)
+    //Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    //Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    //Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    //Navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    //Dagger - Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.navigation.fragment)
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -65,13 +78,6 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
-    //Hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-    //Lifecycle
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
     //Other's
     implementation(libs.timber) //Timber Log
 }
