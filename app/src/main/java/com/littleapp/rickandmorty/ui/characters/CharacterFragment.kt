@@ -9,7 +9,7 @@ import timber.log.Timber
 
 @AndroidEntryPoint
 class CharacterFragment : BaseFragment<FragmentCharacterBinding, CharacterViewModel>(
-    FragmentCharacterBinding::inflate
+    FragmentCharacterBinding::inflate,
 ) {
     override val viewModel: CharacterViewModel by hiltNavGraphViewModels(R.id.nav_graph)
     private val adapter = CharacterAdapter()
@@ -26,8 +26,7 @@ class CharacterFragment : BaseFragment<FragmentCharacterBinding, CharacterViewMo
     override fun setupSubscribe() {
         viewModel.fetchCharacters(count).collectResource(
             onLoading = { isLoading = it },
-            onError = { Timber.e(it) },
-            onSuccess = { adapter.submitList(it) }
-        )
+            onError = { Timber.e(it) }
+        ) { adapter.submitList(it) }
     }
 }

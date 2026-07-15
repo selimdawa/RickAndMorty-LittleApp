@@ -9,7 +9,7 @@ import timber.log.Timber
 
 @AndroidEntryPoint
 class EpisodeFragment : BaseFragment<FragmentEpisodeBinding, EpisodeViewModel>(
-    FragmentEpisodeBinding::inflate
+    FragmentEpisodeBinding::inflate,
 ) {
     override val viewModel: EpisodeViewModel by hiltNavGraphViewModels(R.id.nav_graph)
     private val adapter = EpisodeAdapter()
@@ -26,8 +26,7 @@ class EpisodeFragment : BaseFragment<FragmentEpisodeBinding, EpisodeViewModel>(
     override fun setupSubscribe() {
         viewModel.fetchEpisodes(count).collectResource(
             onLoading = { isLoading = it },
-            onError = { Timber.e(it) },
-            onSuccess = { adapter.submitList(it) }
-        )
+            onError = { Timber.e(it) }
+        ) { adapter.submitList(it) }
     }
 }

@@ -9,7 +9,7 @@ import timber.log.Timber
 
 @AndroidEntryPoint
 class LocationFragment : BaseFragment<FragmentLocationBinding, LocationViewModel>(
-    FragmentLocationBinding::inflate
+    FragmentLocationBinding::inflate,
 ) {
     override val viewModel: LocationViewModel by hiltNavGraphViewModels(R.id.nav_graph)
     private val adapter = LocationAdapter()
@@ -26,8 +26,7 @@ class LocationFragment : BaseFragment<FragmentLocationBinding, LocationViewModel
     override fun setupSubscribe() {
         viewModel.fetchLocations(count).collectResource(
             onLoading = { isLoading = it },
-            onError = { Timber.e(it) },
-            onSuccess = { adapter.submitList(it) }
-        )
+            onError = { Timber.e(it) }
+        ) { adapter.submitList(it) }
     }
 }

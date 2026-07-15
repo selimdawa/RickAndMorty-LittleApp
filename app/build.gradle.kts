@@ -51,10 +51,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.material)
     //Image
-    implementation(libs.circleimageview)                //Circle image
-    implementation(libs.glide)            //Glide image
-    implementation(libs.glide.transformations)           //Glide Blur
-    implementation(libs.coil)    //Coil
+    implementation(libs.coil)    //Coil Kotlin Image
     //Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
